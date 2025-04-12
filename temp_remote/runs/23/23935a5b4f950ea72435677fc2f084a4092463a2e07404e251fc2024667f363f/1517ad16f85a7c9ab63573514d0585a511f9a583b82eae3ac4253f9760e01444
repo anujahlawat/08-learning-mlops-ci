@@ -1,0 +1,17 @@
+cmd: python src/data/data_preprocessing.py
+deps:
+- path: data/raw
+  hash: md5
+  md5: 72e907629315922c2425465da8a433e7.dir
+  size: 817597
+  nfiles: 2
+- path: src/data/data_preprocessing.py
+  hash: md5
+  md5: 2031843912c4af269f668db21e154783
+  size: 3895
+outs:
+- path: data/interim
+  hash: md5
+  md5: f84456f7079a77914f5639f88ded12d8.dir
+  size: 555687
+  nfiles: 2
