@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = /Users/anujahlawat/Documents/1.1 ds_campusx/2.8 MLOps/3.4 model deployment /3.2 ci/4.2 ci/temp_remote
