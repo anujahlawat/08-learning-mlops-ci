@@ -6,23 +6,25 @@ import logging
 import os
 import dagshub
 
+#google se copy kr rhe h ye code ... yaad rakhne ki koi jrurat nhi h bhai ... 
 # Set up DagsHub credentials for MLflow tracking
-#dagshub_token = os.getenv("DAGSHUB_PAT")
-#if not dagshub_token:
-#    raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
-#
-#os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-#os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
-#
-#dagshub_url = "https://dagshub.com/anujahlawat.ds/06-learning-mlops-mini-project.mlflow"
-#repo_owner = "anujahlawat.ds"
-#repo_name = "06-learning-mlops-mini-project"
-#
-# Set up MLflow tracking URI
-#mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+dagshub_token = os.getenv("DAGSHUB_PAT")
+if not dagshub_token:
+    raise EnvironmentError("DAGSHUB_PAT environment variable is not set")
 
-mlflow.set_tracking_uri('https://dagshub.com/anujahlawat.ds/08-learning-mlops-ci.mlflow')
-dagshub.init(repo_owner='anujahlawat.ds', repo_name='08-learning-mlops-ci', mlflow=True)
+os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+
+dagshub_url = "https://dagshub.com/anujahlawat.ds/08-learning-mlops-ci.mlflow"
+repo_owner = "anujahlawat.ds"
+repo_name = "08-learning-mlops-ci"
+
+# Set up MLflow tracking URI
+mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+ 
+#or
+#mlflow.set_tracking_uri('https://dagshub.com/anujahlawat.ds/08-learning-mlops-ci.mlflow')
+#dagshub.init(repo_owner='anujahlawat.ds', repo_name='08-learning-mlops-ci', mlflow=True)
 
 # logging configuration
 logger = logging.getLogger('model_registration')
