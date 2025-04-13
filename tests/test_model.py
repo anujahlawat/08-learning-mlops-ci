@@ -38,7 +38,6 @@ class TestModelLoading(unittest.TestCase):
         # Load holdout test data
         cls.holdout_data = pd.read_csv('data/processed/test_bow.csv')
 
-
     @staticmethod
     def get_latest_model_version(model_name, stage="Staging"):
         client = mlflow.MlflowClient()
