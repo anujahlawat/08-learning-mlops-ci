@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>              <!--html tag open kiya-->
+    <head>          <!--head tag open kiya-->
+        <title>Sentiment Analysis</title>         <!--title tag open kiya and usme humne sentiment analysis likh diya--> 
+    </head>
+
+    <body>                                   <!--body tag open kiya-->
+        <h1>Sentiment Analysis</h1>          <!--yha hum heading likh rhe h-->
+        <form action="/predict" method="POST">                            
+                                          <!--form open kiya and form m hum ek 2 cheeje abhi se bta rhe h ki ... jbb ye form submit hoga toh request jayegi "/predict" url pe ... hum apne flask app me ek nya-->
+                                          <!--nya route bnayenge ... jiska naam hoga predict ... uske pass request jayegi and--> 
+                                          <!--request bhejne ka tarika h ... "POST"-->
+            <label>write text:</label><br>    <!--br is for line change-->
+            <textarea name="text" rows="10" cols="40"></textarea><br>     <!--text area ko humne naam diya h "text" also hum text area ka size b increse kr rhe h 10*40-->                     
+            <input type="submit" value="Predict">     <!--text area k neeche hum button de rhe h and uska type hoga submit and value hogi predict i.e. user ko predict option p click krne ko milega-->
+        </form>
+        
+        <!--app.py k result section k liye ye if else statement h-->
+        {% if result is not none %}          <!--if chalaya-->
+            {% if result == 1 %}
+                <h2>Happy</h2>                 <!--agar result ka value 1 h toh h2 me hum likh denge ... happy-->
+            {% else %}
+                <h2>SAD</h2>                   <!--agar result ka value 1 nhi h toh h2 me hum likh denge ... sad-->
+            {% endif %}
+        {% endif %}                          <!--if end kiya-->
+    </body>
+</html>
